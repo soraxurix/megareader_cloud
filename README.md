@@ -1,1 +1,0 @@
-# megareader_cloud
