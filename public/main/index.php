@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Principal - MegarReader</title>
 	<link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/soraxurix/GDLREADER/main/GDLREADER/app/src/main/res/drawable/logo.png">	
 	
@@ -13,87 +13,100 @@
 	<!-- FONT AWESOME -->
 	<script src="https://kit.fontawesome.com/cb918a26fb.js" crossorigin="anonymous"></script>
 	
+	<style>
+		.nav_container{
+			border-bottom: solid 0.5px;
+			padding: 10px 100px;
+		}
+		@media screen and (max-width: 1026px) {
+  			.nav_container {
+		    	padding: 10px 0;
+		  	}
+		}
 
-	<!-- <link rel="stylesheet" href="style.css"> -->
-	
+	</style>	
 </head>
 <body>
 	<?php
 		include("sesion/comprobar_sesion.php");
 	?>
-	<nav class="navbar is-transparent">
-	  <div class="navbar-brand">
-	    <a class="navbar-item" href="https://bulma.io">
-	      <img src="https://raw.githubusercontent.com/soraxurix/GDLREADER/main/GDLREADER/app/src/main/res/drawable/logo.png" width="112" height="28">
-	    </a>
-	    <div class="navbar-burger" data-target="navbarExampleTransparentExample">
-	      <span></span>
-	      <span></span>
-	      <span></span>
-	    </div>
-	  </div>
+	<div class="nav_container">
+		<nav class="navbar">
+		  <div class="navbar-brand">
+		    <a class="navbar-item" href="https://bulma.io">
+		      <img src="https://raw.githubusercontent.com/soraxurix/GDLREADER/main/GDLREADER/app/src/main/res/drawable/logo.png" width="112" height="28">
+		    </a>
+		    <div class="navbar-burger" data-target="navBar">
+		      <span></span>
+		      <span></span>
+		      <span></span>
+		    </div>
+		  </div>
 
-	  <div id="navbarExampleTransparentExample" class="navbar-menu">
-	    <div class="navbar-start">
-	      <a class="navbar-item" href="https://bulma.io/">
-	        Home
-	      </a>
-	      <div class="navbar-item has-dropdown is-hoverable">
-	        <a class="navbar-link" href="https://bulma.io/documentation/overview/start/">
-	          Docs
-	        </a>
-	        <div class="navbar-dropdown is-boxed">
-	          <a class="navbar-item" href="https://bulma.io/documentation/overview/start/">
-	            Overview
-	          </a>
-	          <a class="navbar-item" href="https://bulma.io/documentation/overview/modifiers/">
-	            Modifiers
-	          </a>
-	          <a class="navbar-item" href="https://bulma.io/documentation/columns/basics/">
-	            Columns
-	          </a>
-	          <a class="navbar-item" href="https://bulma.io/documentation/layout/container/">
-	            Layout
-	          </a>
-	          <a class="navbar-item" href="https://bulma.io/documentation/form/general/">
-	            Form
-	          </a>
-	          <hr class="navbar-divider">
-	          <a class="navbar-item" href="https://bulma.io/documentation/elements/box/">
-	            Elements
-	          </a>
-	          <a class="navbar-item is-active" href="https://bulma.io/documentation/components/breadcrumb/">
-	            Components
-	          </a>
-	        </div>
-	      </div>
-	    </div>
+		  <div id="navBar" class="navbar-menu">
+		    		    	  
+		    <div class="navbar-end">
+				<div class="navbar-item has-dropdown is-hoverable">
+					<a class="navbar-link is-size-5 has-text-info" href="#"> <?php echo $_SESSION['name_user']?> </a>
+					<div class="navbar-dropdown is-boxed">
+						<a class="navbar-item is-size-5 icon-text">
+							<span class="icon has-text-success"><i class="fas fa-book"></i></span> 
+							<span class="has-text-black">Libros</span>
+						</a>
+						<a class="navbar-item is-size-5 icon-text" href="#"> 
+							<span class="icon has-text-primary"><i class="fas fa-user"></i></span>
+							<span class="has-text-black">Perfil</span>
+						</a>
+						<a class="navbar-item is-size-5 icon-text" href="#"> 
+							<span class="icon has-text-info"><i class="fas fa-book-reader"></i></span>
+							<span class="has-text-black">Mis libros</span>
+						</a>
+						<hr class="navbar-divider">
+						<a class="navbar-item is-size-5 icon-text" href="#"> 
+							<span class="icon has-text-warning"><i class="fas fa-question-circle"></i></span>
+							<span class="has-text-black">Sobre nosotros</span>
+						</a>
+						<a class="navbar-item is-size-5 icon-text" href="sesion/cerrar_sesion.php"> 
+							<span class="icon has-text-danger"><i class="fas fa-sign-out-alt"></i></span>
+							<span class="has-text-black">Cerrar Sesion</span>
+						</a>
+					</div>
+				</div>			
+		    </div>
+		  </div>
+		</nav>
+	</div>	
 
-	    <div class="navbar-end">
-	      <div class="navbar-item">
-	        <div class="field is-grouped">
-	          <p class="control">
-	            <a class="bd-tw-button button" data-social-network="Twitter" data-social-action="tweet" data-social-target="https://bulma.io" target="_blank" href="https://twitter.com/intent/tweet?text=Bulma: a modern CSS framework based on Flexbox&amp;hashtags=bulmaio&amp;url=https://bulma.io&amp;via=jgthms">
-	              <span class="icon">
-	                <i class="fab fa-twitter"></i>
-	              </span>
-	              <span>
-	                Tweet
-	              </span>
-	            </a>
-	          </p>
-	          <p class="control">
-	            <a class="button is-primary" href="https://github.com/jgthms/bulma/releases/download/0.9.4/bulma-0.9.4.zip">
-	              <span class="icon">
-	                <i class="fas fa-download"></i>
-	              </span>
-	              <span>Download</span>
-	            </a>
-	          </p>
-	        </div>
-	      </div>
-	    </div>
-	  </div>
-	</nav>
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+
+		  // Get all "navbar-burger" elements
+		  const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+		  // Add a click event on each of them
+		  $navbarBurgers.forEach( el => {
+		    el.addEventListener('click', () => {
+
+		      // Get the target from the "data-target" attribute
+		      const target = el.dataset.target;
+		      const $target = document.getElementById(target);
+
+		      // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+		      el.classList.toggle('is-active');
+		      $target.classList.toggle('is-active');
+
+		    });
+		  });
+
+		});
+	</script>	
+
+	<style>
+		@media screen and (max-width: 1025) {
+		  .navbar {
+		    padding: 0;
+		  }
+		}		
+	</style>	
 </body>
 </html>
