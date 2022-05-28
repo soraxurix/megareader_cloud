@@ -2,8 +2,8 @@
 session_start();
 
 // Agregamos las funciones y la conexion a la base de datos
-include '../clases/conexion.php';
-include '../clases/encriptacion.php';
+include 'clases/conexion.php';
+include 'clases/encriptacion.php';
 
 // Valdiamos si los daots vienen con informacion
 if (isset($_POST['email']) || isset($_POST['pass'])){
