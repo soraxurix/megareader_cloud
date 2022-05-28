@@ -1,4 +1,6 @@
 <?php 
+session_start();
+
 // Agregamos las funciones y la conexion a la base de datos
 include 'clases/conexion.php';
 include 'clases/encriptacion.php';
@@ -16,10 +18,15 @@ if (isset($_POST['email']) || isset($_POST['pass'])){
  	// Verificamos que el correo exista
  	if (mysqli_num_rows($result)===1) {
 		
-		$consulta = "SELECT id_usuario FROM usuarios WHERE BINARY pass = '$pass_ecrypted' AND BINARY email = '$email'";
+		$consulta = "SELECT id_usuario, username, email FROM usuarios WHERE BINARY pass = '$pass_ecrypted' AND BINARY email = '$email'";
  		$result = mysqli_query($conexion, $consulta);
 
  		if (mysqli_num_rows($result)===1) {
+		 	$array = mysqli_fetch_array($result);
+
+ 			$_SESSION['id_user'] = $array['id_usuario'];
+ 			$_SESSION['name_user'] = $array['username'];
+ 			$_SESSION['email_user'] = $array['email'];
  			echo json_encode(200);
  		}else{
  			echo json_encode(203);	

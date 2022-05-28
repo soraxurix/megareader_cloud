@@ -18,6 +18,9 @@
 	
 </head>
 <body>
+	<?php
+		include("sesion/comprobar_sesion.php");
+	?>
 	<nav class="navbar is-transparent">
 	  <div class="navbar-brand">
 	    <a class="navbar-item" href="https://bulma.io">

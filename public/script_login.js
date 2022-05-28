@@ -23,6 +23,8 @@ button_login.addEventListener('click', async function (e) {
 			notificacion.classList.remove('is-danger');
 			notificacion.classList.add('is-success');
 			notificacion.classList.remove('is-hidden');
+
+			window.location.replace("main/");
 			break;
 		case 201:
 			notificacion.innerHTML ='No se pasaron los valores del formulario'; 
@@ -34,7 +36,7 @@ button_login.addEventListener('click', async function (e) {
 			notificacion.innerHTML ='El correo electrónico ingresado no es correcto'; 
 			notificacion.classList.remove('is-success');
 			notificacion.classList.add('is-danger');
-			notificacion.classList.remove('is-hidden');
+			notificacion.classList.remove('is-hidden');			
 			break;
 		case 203:
 			notificacion.innerHTML ='La contrraseña ingresada no es correcta'; 
