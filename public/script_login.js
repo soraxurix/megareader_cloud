@@ -3,7 +3,7 @@ const button_signin = document.getElementById("button-signin");
 const icono_button = document.getElementById("icono-button");
 const notificacion = document.getElementById("notificacion");
 
-button_login.addEventListener('click', async function (e) {
+/*button_login.addEventListener('click', async function (e) {
 	// Agregamos el icono de cargando
 	icono_button.innerHTML = '<div class="loader is-loading"></div>';
 
@@ -48,4 +48,19 @@ button_login.addEventListener('click', async function (e) {
 
 	// Agregando icono normal
 	icono_button.innerHTML = '<i class="fas fa-user"></i>';
+});*/
+button_login.addEventListener('click', async function (e) {
+	// Agregamos el icono de cargando
+	icono_button.innerHTML = '<div class="loader is-loading"></div>';
+
+	/*var form = document.getElementById("form_login");
+	var dataForm = new FormData(form);*/
+	
+	const res = await fetch('clases/conexion.php');
+
+	const data = await res.json();
+
+	// Agregando icono normal
+	icono_button.innerHTML = '<i class="fas fa-user"></i>';
 });
+// "Se conecto a la base de datos"

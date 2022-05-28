@@ -8,7 +8,7 @@ $db = "sql10494751";
 $conexion = mysqli_connect($servidor,$usuario,$password,$db);
 
 if($conexion){
-	echo "Se conecto a la base de datos";
+	echo json_encode("Se conecto a la base de datos");
 }
 // Server: sql10.freemysqlhosting.net
 // Name: sql10494751
